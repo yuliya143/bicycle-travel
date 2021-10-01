@@ -1,0 +1,7 @@
+:root {
+  --block-indent: 18px;
+
+  @include tablet-landscape {
+    --block-indent: 120px;
+  }
+}

@@ -1,0 +1,14 @@
+.header {
+  min-height: 74px;
+  display: flex;
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__menu-button {
+    all: unset;
+    line-height: 0;
+  }
+}

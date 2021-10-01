@@ -1,0 +1,11 @@
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}

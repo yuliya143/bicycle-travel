@@ -1,0 +1,62 @@
+.menu-button {
+  $button-size: 58px;
+  $line-width: 22px;
+  $line-height: 3px;
+
+  all: unset;
+  width: $button-size;
+  min-height: $button-size;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transition-timing-function: linear;
+  transition-duration: 0.15s;
+  transition-property: opacity, filter;
+  background-color: transparent;
+
+  &_opened {
+    .menu-button__line {
+      background-color: transparent;
+    }
+
+    .menu-button__line::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .menu-button__line::after {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  &__line {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: $line-width;
+    height: $line-height;
+    transition: opacity 0.2s ease;
+    background-color: var(--primary-color);
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: $line-width;
+      height: $line-height;
+      transition: transform 0.2s ease;
+      background-color: var(--primary-color);
+    }
+
+    &::before {
+      top: -9px;
+    }
+
+    &::after {
+      top: 9px;
+    }
+  }
+}
