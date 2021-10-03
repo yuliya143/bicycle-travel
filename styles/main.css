@@ -2,7 +2,6 @@
   --content-indent: 18px;
   --font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
     Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --section-indent-y: 40px;
 }
 @media (min-width: 1024px) {
   :root {
@@ -465,19 +464,12 @@ template {
   line-height: 1.25;
   letter-spacing: -0.009em;
   color: var(--primary-color);
-  border-top: 1px solid var(--divider);
-  padding-top: 40px;
   padding-bottom: 40px;
 }
 @media (min-width: 768px) {
   .section-title {
     font-size: 55px;
     line-height: 1.09;
-  }
-}
-@media (min-width: 1024px) {
-  .section-title {
-    border-top: none;
   }
 }
 
@@ -503,10 +495,106 @@ template {
   padding-top: 114px;
 }
 
+.quote {
+  padding-bottom: 80px;
+  background-size: 100% 1px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, transparent var(--content-indent), var(--divider) var(--content-indent), var(--divider) calc(100% - var(--content-indent)), transparent var(--content-indent));
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  padding-top: 20px;
+}
+@media (min-width: 1024px) {
+  .quote {
+    padding-bottom: 60px;
+    background-image: none;
+  }
+}
+@media (min-width: 1024px) {
+  .quote {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+}
+@media (min-width: 1024px) {
+  .quote__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 80px;
+         column-gap: 80px;
+  }
+}
+.quote__image {
+  display: block;
+  line-height: 0;
+  width: 100%;
+  max-height: 460px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.quote__content {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.quote__text {
+  quotes: none;
+  display: block;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 1.26;
+  letter-spacing: -0.022em;
+}
+@media (min-width: 1024px) {
+  .quote__text {
+    max-width: 470px;
+    padding-top: 0;
+    font-size: 34px;
+    line-height: 1.29;
+    letter-spacing: -0.015em;
+  }
+}
+.quote__author {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.57;
+}
+@media (min-width: 1024px) {
+  .quote__author {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+.quote__author-profession {
+  padding-top: 4px;
+  font-size: 10px;
+  line-height: 1.6;
+}
+@media (min-width: 1024px) {
+  .quote__author-profession {
+    padding-top: 6px;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+
 .trainings {
   font-family: var(--font-family);
-  padding-top: var(--section-indent-y);
-  padding-bottom: var(--section-indent-y);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+@media (min-width: 1024px) {
+  .trainings {
+    padding-top: 150px;
+    padding-bottom: 120px;
+  }
 }
 @media (min-width: 1024px) {
   .trainings__container {

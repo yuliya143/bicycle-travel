@@ -1,7 +1,12 @@
 .trainings {
   font-family: var(--font-family);
-  padding-top: var(--section-indent-y);
-  padding-bottom: var(--section-indent-y);
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include tablet-landscape {
+    padding-top: 150px;
+    padding-bottom: 120px;
+  }
 
   &__container {
     @include tablet-landscape {

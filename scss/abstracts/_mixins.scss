@@ -21,3 +21,22 @@
     @content;
   }
 }
+
+@mixin section {
+  padding-bottom: 80px;
+  background-size: 100% 1px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    to right,
+    transparent var(--content-indent),
+    var(--divider) var(--content-indent),
+    var(--divider) calc(100% - var(--content-indent)),
+    transparent var(--content-indent)
+  );
+
+  @include tablet-landscape {
+    padding-bottom: 60px;
+    background-image: none;
+  }
+}
