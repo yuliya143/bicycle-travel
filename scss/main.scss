@@ -3,12 +3,20 @@
 
 @import './base/_fonts';
 @import './base/_normalize';
-@import './base/_typography';
 
 @import './themes/_dark';
 @import './themes/_light';
 
-@import './blocks/_container.scss';
+@import './blocks/_page';
+
+@import './blocks/_container';
 @import './blocks/_header';
 @import './blocks/_navigation';
 @import './blocks/_menu-button';
+
+@import './blocks/_section-title';
+@import './blocks/_text';
+
+@import './blocks/_promo';
+
+@import './blocks/_trainings';

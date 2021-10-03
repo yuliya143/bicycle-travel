@@ -12,27 +12,27 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body class="page">
-    <header class="header">
+    <!-- <header class="header">
       <div class="header__container">
         <nav class="header__menu navigation">
           <a href="#" class="navigation__link">Покрытия и градиенты</a>
           <a href="#" class="navigation__link">Велосипеды</a>
           <a href="#" class="navigation__link">Тренировки</a>
         </nav>
-        <button type="button" class="menu-button menu-button_opened">
+        <button type="button" class="menu-button">
           <span class="menu-button__line"></span>
         </button>
       </div>
     </header>
 
     <main class="content">
-      <section class="promo">
-        <h1 class="title">Шоссе, ТТ и Грэвел</h1>
+      <section class="promo container">
+        <h1 class="promo__title section-title">Шоссе, ТТ и Грэвел</h1>
         <img src="" alt="Дорога среди гористого лесного массива" class="promo__image" />
         <div class="promo__bicycle-fix">
           <img src="" alt="Велосипед" class="promo__bicycle-image" />
         </div>
-        <p class="text">
+        <p class="promo__text text">
           Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам – нужно
           только определиться с выбором велосипеда и отправиться в путь.
         </p>
@@ -53,12 +53,25 @@
       </aside>
 
       <section class="tracks">
-        <!-- highway, gravel, time-trail -->
+        highway, gravel, time-trail
       </section>
 
-      <section class="bicycles"></section>
+      <section class="bicycles"></section> -->
 
-      <section class="trainings"></section>
+      <section class="trainings">
+        <div class="trainings__container container">
+          <h2 class="trainings__title section-title">Тренировки</h2>
+          <img src="./assets/images/trainings-photo.jpg" alt="Асфальтированная дорога в хвойной аллее" class="trainings__image" />
+          <p class="trainings__text text">
+            Чтобы найти маршрут для тренировки можно воспользоваться сервисом Komoot, а записать эти тренировки поможет приложение Strava,
+а также это приложение позволит построить тренировочный план.
+          </p>
+          <ul class="trainings__list">
+            <li class="trainings__item"><a href="https://www.strava.com" target="_blank" class="trainings__link">Strava</a></li>
+            <li class="trainings__item"><a href="https://www.komoot.com" target="_blank" class="trainings__link">Komoot</a></li>
+          </ul>
+        </div>
+      </section>
     </main>
 
     <footer class="footer"></footer>

@@ -1,0 +1,21 @@
+.section-title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.25;
+  letter-spacing: -0.009em;
+  color: var(--primary-color);
+  border-top: 1px solid var(--divider);
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  @include tablet {
+    font-size: 55px;
+    line-height: 1.09;
+  }
+
+  @include tablet-landscape {
+    border-top: none;
+  }
+}
