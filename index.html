@@ -26,20 +26,37 @@
     </header> -->
 
     <main class="content">
-      <!-- <section class="promo container">
-        <h1 class="promo__title section-title">Шоссе, ТТ и Грэвел</h1>
-        <img src="" alt="Дорога среди гористого лесного массива" class="promo__image" />
-        <div class="promo__bicycle-fix">
-          <img src="" alt="Велосипед" class="promo__bicycle-image" />
-        </div>
-        <p class="promo__text text">
-          Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам – нужно
-          только определиться с выбором велосипеда и отправиться в путь.
-        </p>
-        <button type="button" class="promo__button">Подробнее</button>
-      </section> -->
+      <section class="promo">
+        <div class="promo__container">
+          <h1 class="promo__title section-title">Шоссе, ТТ и Грэвел</h1>
 
-      <aside class="quote">
+          <div class="image-container">
+            <img
+              src="./assets/images/promo-photo.jpg"
+              alt="Дорога среди гористого лесного массива"
+              class="promo__image"
+            />
+            <div class="promo__scroll-box">
+              <div class="promo__bicycle-container">
+                <img
+                  src="./assets/images/promo-bicycle.png"
+                  alt="Велосипед"
+                  class="promo__bicycle-image"
+                />
+              </div>
+              <p class="promo__bicycle-name">Cannondale Systemsix</p>
+            </div>
+          </div>
+
+          <p class="promo__text text">
+            Триатлонные старты, горные серпантины или грейвел заезды по живописным маршрутам – нужно
+            только определиться с выбором велосипеда и отправиться в путь.
+          </p>
+          <button type="button" class="promo__button">Подробнее</button>
+        </div>
+      </section>
+
+      <!-- <aside class="quote">
         <div class="quote__container container">
           <img
             src="./assets/images/quote-photo.jpg"
@@ -56,7 +73,7 @@
             </figcaption>
           </figure>
         </div>
-      </aside>
+      </aside> -->
       <!--
       <section class="tracks">highway, gravel, time-trail</section>
 
@@ -87,7 +104,24 @@
       </section>
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="container">
+        <h3 class="footer__title">Подпишитесь на рассылку&nbsp;&ndash;</h3>
+        <form class="footer__form form" name="subscription">
+          <div class="form__input-group">
+            <input
+              type="url"
+              name="user-email"
+              class="form__item"
+              placeholder="Ваш e-mail"
+              required
+            />
+            <button type="submit" class="form__button">ok</button>
+          </div>
+        </form>
+        <p class="footer__copyright">&copy; Road Club 2021</p>
+      </div>
+    </footer>
 
     <script src="./scripts/index.js"></script>
   </body>

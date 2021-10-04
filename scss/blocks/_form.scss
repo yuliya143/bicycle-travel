@@ -1,0 +1,68 @@
+.form {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: #efefef;
+  padding: 40px 0 100px;
+
+  @include tablet-landscape {
+    padding-top: 50px;
+  }
+
+  &__input-group {
+    position: relative;
+  }
+
+  &__item {
+    width: 100%;
+    background-color: inherit;
+    border: 1px solid rgba(199, 199, 199, 0.5);
+    border-radius: 4px;
+    font-weight: 500;
+    box-sizing: border-box;
+    font-size: 13px;
+    line-height: 2.15;
+    padding: 11px 20px;
+    transition: opacity 0.3s ease;
+
+    &::placeholder {
+      color: #222;
+      opacity: 0.7;
+      transition: opacity 0.3s ease, color 0.3s ease;
+    }
+
+    &:hover::placeholder {
+      color: var(--primary-color);
+      opacity: 1;
+    }
+
+    &:focus::placeholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid #c7c7c7;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:focus ~ .form__button {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__button {
+    all: unset;
+    line-height: 0;
+    padding: 0 22px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    cursor: pointer;
+  }
+}

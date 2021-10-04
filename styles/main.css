@@ -374,6 +374,7 @@ template {
   --text-color: #e6e6e6;
   --page-background: #333;
   --divider: #e3e3e3;
+  --footer-background: #2f2f2f;
 }
 
 :root {
@@ -381,6 +382,7 @@ template {
   --text-color: #222222;
   --page-background: #f4f4f4;
   --divider: #e3e3e3;
+  --footer-background: #efefef;
 }
 
 .page {
@@ -490,9 +492,88 @@ template {
 }
 
 .promo {
+  padding-bottom: 80px;
+  background-size: 100% 1px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, transparent var(--content-indent), var(--divider) var(--content-indent), var(--divider) calc(100% - var(--content-indent)), transparent var(--content-indent));
   font-family: var(--font-family);
   color: var(--primary-color);
-  padding-top: 114px;
+  padding-top: 40px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+@media (min-width: 1024px) {
+  .promo {
+    padding-bottom: 60px;
+    background-image: none;
+  }
+}
+@media (min-width: 1024px) {
+  .promo {
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+}
+.promo__container {
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .promo__container {
+    display: grid;
+  }
+}
+.promo__image {
+  display: block;
+  line-height: 0;
+  width: 100%;
+  padding-left: 30px;
+  min-height: 348px;
+  max-height: 836px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+.promo__scroll-box {
+  position: absolute;
+  top: 43%;
+  right: 20%;
+}
+.promo__bicycle-image {
+  display: block;
+  box-shadow: -20px 60px 220px rgba(0, 0, 0, 0.44);
+  border-radius: 20px;
+  padding: 10px 26px;
+  max-width: 180px;
+}
+.promo__bicycle-container {
+  background: #f4f4f4;
+  border-radius: 20px;
+}
+.promo__bicycle-name {
+  display: none;
+}
+.promo__text {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.promo__button {
+  all: unset;
+  line-height: 0;
+  background-color: #24b47e;
+  border-radius: 4px;
+  max-width: 284px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.46;
+  text-align: center;
+  letter-spacing: 0.077em;
+  color: #fff;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  box-sizing: border-box;
 }
 
 .quote {
@@ -673,4 +754,126 @@ template {
   .trainings__link:hover {
     opacity: 0.75;
   }
+}
+
+.footer {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: var(--footer-background);
+  padding-top: 60px;
+  padding-bottom: 25px;
+}
+@media (min-width: 1024px) {
+  .footer {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+}
+.footer__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+}
+.footer__form {
+  max-width: 360px;
+}
+.footer__copyright {
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #cfcfcf;
+}
+
+.form {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: #efefef;
+  padding: 40px 0 100px;
+}
+@media (min-width: 1024px) {
+  .form {
+    padding-top: 50px;
+  }
+}
+.form__input-group {
+  position: relative;
+}
+.form__item {
+  width: 100%;
+  background-color: inherit;
+  border: 1px solid rgba(199, 199, 199, 0.5);
+  border-radius: 4px;
+  font-weight: 500;
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 2.15;
+  padding: 11px 20px;
+  transition: opacity 0.3s ease;
+}
+.form__item::-moz-placeholder {
+  color: #222;
+  opacity: 0.7;
+  -moz-transition: opacity 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+.form__item:-ms-input-placeholder {
+  color: #222;
+  opacity: 0.7;
+  -ms-transition: opacity 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+.form__item::placeholder {
+  color: #222;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+.form__item:hover::-moz-placeholder {
+  color: var(--primary-color);
+  opacity: 1;
+}
+.form__item:hover:-ms-input-placeholder {
+  color: var(--primary-color);
+  opacity: 1;
+}
+.form__item:hover::placeholder {
+  color: var(--primary-color);
+  opacity: 1;
+}
+.form__item:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.form__item:focus:-ms-input-placeholder {
+  opacity: 0;
+  -ms-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.form__item:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.form__item:focus {
+  outline: none;
+  border: 1px solid #c7c7c7;
+  opacity: 1;
+  visibility: visible;
+}
+.form__item:focus ~ .form__button {
+  opacity: 1;
+  visibility: visible;
+}
+.form__button {
+  all: unset;
+  line-height: 0;
+  padding: 0 22px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */
