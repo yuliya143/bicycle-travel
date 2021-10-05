@@ -375,6 +375,7 @@ template {
   --page-background: #333;
   --divider: #e3e3e3;
   --footer-background: #2f2f2f;
+  --line-pointer: #707070;
 }
 
 :root {
@@ -383,6 +384,7 @@ template {
   --page-background: #f4f4f4;
   --divider: #e3e3e3;
   --footer-background: #efefef;
+  --line-pointer: #d7d7d7;
 }
 
 .page {
@@ -516,14 +518,17 @@ template {
 @media (min-width: 1024px) {
   .promo__container {
     display: grid;
-    grid-template-columns: minmax(300px, 460px) 1fr;
-    grid-template-rows: auto auto 1fr;
+    grid-template-columns: minmax(300px, 460px) minmax(500px, 1fr);
+    grid-template-rows: auto 1fr;
     padding-right: 0;
+    -moz-column-gap: 50px;
+         column-gap: 50px;
   }
 }
 @media (min-width: 1024px) {
   .promo__title {
     padding-top: 60px;
+    padding-bottom: 0;
   }
 }
 .promo__image-container {
@@ -537,8 +542,6 @@ template {
     grid-row: 1/-1;
     max-width: 100%;
     padding-left: 23.2%;
-    margin-left: 5.85%;
-    min-width: 500px;
   }
 }
 .promo__image {
@@ -596,11 +599,21 @@ template {
 }
 @media (min-width: 1440px) {
   .promo__bicycle-name {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 120%;
+    display: flex;
+    align-items: center;
+    margin: 167px 0 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
   }
+}
+.promo__bicycle-name::after {
+  content: "";
+  display: block;
+  width: 132px;
+  height: 2px;
+  background-color: var(--line-pointer);
+  margin-left: 20px;
 }
 .promo__text {
   padding-top: 40px;

@@ -13,15 +13,17 @@
   &__container {
     @include tablet-landscape {
       display: grid;
-      grid-template-columns: minmax(300px, 460px) 1fr;
-      grid-template-rows: auto auto 1fr;
+      grid-template-columns: minmax(300px, 460px) minmax(500px, 1fr);
+      grid-template-rows: auto 1fr;
       padding-right: 0;
+      column-gap: 50px;
     }
   }
 
   &__title {
     @include tablet-landscape {
       padding-top: 60px;
+      padding-bottom: 0;
     }
   }
 
@@ -35,8 +37,6 @@
       grid-row: 1/-1;
       max-width: 100%;
       padding-left: 23.2%;
-      margin-left: 5.85%;
-      min-width: 500px;
     }
   }
 
@@ -94,10 +94,21 @@
     display: none;
 
     @include desktop {
+      display: flex;
+      align-items: center;
+      margin: 167px 0 0;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    &::after {
+      content: '';
       display: block;
-      position: absolute;
-      top: 50%;
-      right: 120%;
+      width: 132px;
+      height: 2px;
+      background-color: var(--line-pointer);
+      margin-left: 20px;
     }
   }
 
