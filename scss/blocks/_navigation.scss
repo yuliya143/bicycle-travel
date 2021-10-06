@@ -34,4 +34,10 @@
       line-height: 1.29;
     }
   }
+
+  &__toggle {
+    position: absolute;
+    right: calc((96% - 140px + 36px) / 2);
+    bottom: 30px;
+  }
 }

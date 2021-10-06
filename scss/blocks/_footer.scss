@@ -21,6 +21,12 @@
     max-width: 360px;
   }
 
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
   &__copyright {
     margin: 0;
     font-weight: 500;

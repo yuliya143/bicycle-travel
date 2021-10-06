@@ -126,7 +126,7 @@
   &__button {
     all: unset;
     line-height: 0;
-    background-color: #24b47e;
+    background-color: var(--main-button-background);
     border-radius: 4px;
     max-width: 284px;
     width: 100%;
