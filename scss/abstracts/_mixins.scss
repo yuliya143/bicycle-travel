@@ -40,3 +40,9 @@
     background-image: none;
   }
 }
+
+@mixin card {
+  background: var(--page-background);
+  border-radius: 20px;
+  box-shadow: 0 0 40px -15px rgba(0, 0, 0, 0.1);
+}
