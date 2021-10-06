@@ -1,11 +1,29 @@
 .header {
-  min-height: 74px;
-  display: flex;
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: var(--page-background);
+
+  @include tablet {
+    display: flex;
+    padding: 28px 120px;
+  }
 
   &__container {
+    position: relative;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
     width: 100%;
   }
 }
