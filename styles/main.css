@@ -375,6 +375,7 @@ template {
   --page-background: #333;
   --divider: #e3e3e3;
   --footer-background: #2f2f2f;
+  --direction-button-background: #434343;
   --line-pointer: #707070;
 }
 
@@ -384,6 +385,7 @@ template {
   --page-background: #f4f4f4;
   --divider: #e3e3e3;
   --footer-background: #efefef;
+  --direction-button-background: #ebebeb;
   --line-pointer: #d7d7d7;
 }
 
@@ -743,6 +745,178 @@ template {
     font-size: 16px;
     line-height: 1.75;
   }
+}
+
+.tracks {
+  padding-bottom: 80px;
+  background-size: 100% 1px;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, transparent var(--content-indent), var(--divider) var(--content-indent), var(--divider) calc(100% - var(--content-indent)), transparent var(--content-indent));
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  padding-top: 20px;
+}
+@media (min-width: 1024px) {
+  .tracks {
+    padding-bottom: 60px;
+    background-image: none;
+  }
+}
+@media (min-width: 1024px) {
+  .tracks {
+    padding-top: 60px;
+  }
+}
+.tracks__container {
+  padding-left: 0;
+  padding-right: 0;
+}
+@media (min-width: 1024px) {
+  .tracks__container {
+    padding-left: 120px;
+  }
+}
+.tracks__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  overflow: hidden;
+}
+.tracks__item {
+  padding-left: 18px;
+  padding-right: 18px;
+  flex-shrink: 0;
+}
+@media (min-width: 1024px) {
+  .tracks__item {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 40px;
+  }
+}
+.tracks__item_active .tracks__title, .tracks__item_active .tracks__text, .tracks__item_active .tracks__badge {
+  opacity: 1;
+}
+.tracks__title {
+  order: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+@media (min-width: 1024px) {
+  .tracks__title {
+    padding-bottom: 0;
+  }
+}
+.tracks__image-container {
+  position: relative;
+  order: 3;
+}
+.tracks__image {
+  display: block;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .tracks__image {
+    max-width: 650px;
+    max-height: 400px;
+  }
+}
+.tracks__badge {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  background-color: #24b47e;
+  background-repeat: no-repeat;
+  background-position: left 16px bottom 12px;
+  width: 100px;
+  height: 40px;
+  border-top-right-radius: 6px;
+  box-sizing: border-box;
+}
+.tracks__badge_type_highway {
+  background-image: url(../../assets/images/highway-badge.svg);
+}
+.tracks__badge_type_gravel {
+  background-image: url(../../assets/images/gravel-badge.svg);
+}
+.tracks__badge_type_tt {
+  background-image: url(../../assets/images/tt-badge.svg);
+}
+.tracks__text {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  max-width: 460px;
+  padding-top: 40px;
+  order: 2;
+}
+@media (min-width: 1024px) {
+  .tracks__text {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+}
+.tracks__button-box {
+  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 18px;
+}
+@media (min-width: 1024px) {
+  .tracks__button-box {
+    position: static;
+    padding-top: 50px;
+  }
+}
+.tracks__button {
+  all: unset;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--direction-button-background);
+}
+@media (min-width: 1024px) {
+  .tracks__button {
+    width: 50px;
+    height: 50px;
+  }
+}
+.tracks__button + .tracks__button {
+  margin-left: 10px;
+}
+@media (min-width: 1024px) {
+  .tracks__button + .tracks__button {
+    margin-left: 20px;
+  }
+}
+.tracks__button::after {
+  content: "";
+  border: solid var(--primary-color);
+  border-width: 0 1.3px 1.3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+@media (min-width: 1024px) {
+  .tracks__button::after {
+    border-width: 0 2px 2px 0;
+    padding: 4px;
+  }
+}
+.tracks__button_type_left::after {
+  transform: translateX(2px) rotate(135deg);
+}
+.tracks__button_type_right::after {
+  transform: translateX(-2px) rotate(-45deg);
 }
 
 .trainings {
