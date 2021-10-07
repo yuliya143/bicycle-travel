@@ -5,12 +5,20 @@ const themeToggleButton = document.querySelector('.theme-toggle__button');
 const themeBox = document.querySelector('.theme-toggle');
 const form = document.forms.subscription;
 const input = form.elements['user-email'];
+const backButton = document.querySelector('.tracks__button_type_left');
+const forwardButton = document.querySelector('.tracks__button_type_right');
+const tracksSlides = Array.from(document.querySelectorAll('.tracks__item'));
+
+const lastTracksIndex = tracksSlides.length - 1;
+let trackActiveIndex = 0;
 
 function setListeners() {
   addThemeListener();
   addNavMenuListener();
   addScrollListener();
   addFormListener();
+  addListenerToBackButton();
+  addListenerToForwardButton();
 }
 
 function addThemeListener() {
@@ -63,6 +71,24 @@ function handleSubmit(e) {
 
 function clearInputValue() {
   input.value = '';
+}
+
+function addListenerToBackButton() {
+  backButton.addEventListener('click', handleBackButtonClicked);
+}
+
+function handleBackButtonClicked(e) {
+  trackActiveIndex = --trackActiveIndex <= 0 ? 0 : trackActiveIndex;
+  console.log(trackActiveIndex);
+}
+
+function addListenerToForwardButton() {
+  forwardButton.addEventListener('click', handleForwardButtonClicked);
+}
+
+function handleForwardButtonClicked(e) {
+  trackActiveIndex = ++trackActiveIndex >= lastTracksIndex ? lastTracksIndex : trackActiveIndex;
+  console.log(trackActiveIndex);
 }
 
 setListeners();
