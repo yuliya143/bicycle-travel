@@ -1,5 +1,5 @@
 .navigation {
-  // display: none;
+  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -9,6 +9,10 @@
   font-family: var(--font-family);
   color: var(--primary-color);
   padding: 144px 18px 0;
+
+  &_opened {
+    display: block;
+  }
 
   @include tablet {
     padding: 0;
@@ -26,6 +30,7 @@
     color: var(--primary-color);
     text-align: center;
     padding-bottom: 32px;
+    transition: opacity 0.2s ease;
 
     @include tablet {
       padding-bottom: 0;
@@ -33,11 +38,11 @@
       font-size: 14px;
       line-height: 1.29;
     }
-  }
 
-  &__toggle {
-    position: absolute;
-    right: calc((96% - 140px + 36px) / 2);
-    bottom: 30px;
+    @include only-desktop {
+      &:hover {
+        opacity: 0.75;
+      }
+    }
   }
 }

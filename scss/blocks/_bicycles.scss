@@ -55,7 +55,7 @@
     align-items: center;
     background-color: var(--page-background);
     border-radius: 2px;
-    border: 1px solid #e3e3e3;
+    border: 1px solid var(--divider);
     min-width: 114px;
     font-weight: 600;
     font-size: 11px;
@@ -63,7 +63,6 @@
     text-align: left;
     padding: 8px 32px 8px 12px;
     box-sizing: border-box;
-    cursor: pointer;
 
     @include tablet-landscape {
       display: none;
@@ -100,7 +99,7 @@
   }
 
   &__menu-item {
-    border: solid #e3e3e3;
+    border: solid var(--divider);
     border-width: 0 1px 1px;
     box-sizing: border-box;
     padding: 6px 8px 6px 12px;
@@ -127,15 +126,35 @@
       opacity: 0.7;
     }
 
+    @include only-desktop {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
+
     &_active {
       font-weight: 600;
       color: var(--primary-color);
       opacity: 1;
+
+      @include only-desktop {
+        &:hover {
+          opacity: 0.75;
+        }
+      }
     }
   }
 
   &__box {
     margin-top: -20px;
+
+    &_type_gravel {
+      display: none;
+    }
+
+    &_type_tt {
+      display: none;
+    }
   }
 
   &__list {
@@ -168,6 +187,13 @@
       margin-right: 0;
       margin-left: 0;
     }
+  }
+
+  &__link {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+    cursor: pointer;
   }
 
   &__image-container {
@@ -217,12 +243,12 @@
     width: 4px;
     height: 4px;
     border-radius: 50%;
-    background: #cacaca;
+    background: var(--dot-bg);
     margin-left: 3px;
     margin-right: 3px;
 
     &_active {
-      background: var(--primary-color);
+      background: var(--dot-bg-active);
     }
   }
 }

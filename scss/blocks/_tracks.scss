@@ -77,7 +77,7 @@
     position: absolute;
     left: 0;
     bottom: 16px;
-    background-color: #24b47e;
+    background-color: var(--btn-primary-bg);
     background-repeat: no-repeat;
     background-position: left 16px bottom 12px;
     width: 100px;
@@ -135,7 +135,7 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    background-color: var(--direction-button-background);
+    background-color: var(--btn-secondary-bg);
 
     @include tablet-landscape {
       width: 50px;
