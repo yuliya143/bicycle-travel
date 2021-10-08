@@ -12,10 +12,15 @@
   &__container {
     padding-left: 0;
     padding-right: 0;
+    position: relative;
 
     @include tablet-landscape {
       padding-left: 120px;
     }
+  }
+
+  &__box {
+    overflow: hidden;
   }
 
   &__list {
@@ -23,13 +28,16 @@
     padding: 0;
     list-style-type: none;
     display: flex;
-    overflow: hidden;
   }
 
   &__item {
     padding-left: 18px;
     padding-right: 18px;
     flex-shrink: 0;
+    width: 100%;
+    max-width: 690px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
 
     @include tablet-landscape {
       display: flex;
@@ -62,10 +70,12 @@
 
   &__image {
     display: block;
-    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
 
     @include tablet-landscape {
       max-width: 650px;
+      width: 100%;
       max-height: 400px;
     }
   }
@@ -137,7 +147,7 @@
     border-radius: 50%;
     background-color: var(--btn-secondary-bg);
 
-    @include tablet-landscape {
+    @include tablet {
       width: 50px;
       height: 50px;
     }
@@ -145,7 +155,7 @@
     & + & {
       margin-left: 10px;
 
-      @include tablet-landscape {
+      @include tablet {
         margin-left: 20px;
       }
     }
@@ -157,7 +167,7 @@
       display: inline-block;
       padding: 3px;
 
-      @include tablet-landscape {
+      @include tablet {
         border-width: 0 2px 2px 0;
         padding: 4px;
       }

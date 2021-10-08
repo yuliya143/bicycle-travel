@@ -465,7 +465,6 @@ template {
 
 .header {
   box-sizing: border-box;
-  max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 10px;
@@ -486,7 +485,7 @@ template {
 @media (min-width: 768px) {
   .header {
     display: flex;
-    padding: 28px 120px;
+    padding: 28px 0;
   }
 }
 .header__container {
@@ -494,6 +493,13 @@ template {
   display: flex;
   justify-content: flex-end;
   width: 100%;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .header__container {
+    padding-left: var(--content-indent);
+    padding-right: var(--content-indent);
+  }
 }
 
 .navigation {
@@ -882,23 +888,30 @@ template {
 .tracks__container {
   padding-left: 0;
   padding-right: 0;
+  position: relative;
 }
 @media (min-width: 1024px) {
   .tracks__container {
     padding-left: 120px;
   }
 }
+.tracks__box {
+  overflow: hidden;
+}
 .tracks__list {
   margin: 0;
   padding: 0;
   list-style-type: none;
   display: flex;
-  overflow: hidden;
 }
 .tracks__item {
   padding-left: 18px;
   padding-right: 18px;
   flex-shrink: 0;
+  width: 100%;
+  max-width: 690px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
 }
 @media (min-width: 1024px) {
   .tracks__item {
@@ -927,11 +940,14 @@ template {
 }
 .tracks__image {
   display: block;
-  width: 100%;
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 1024px) {
   .tracks__image {
     max-width: 650px;
+    width: 100%;
     max-height: 400px;
   }
 }
@@ -996,7 +1012,7 @@ template {
   border-radius: 50%;
   background-color: var(--btn-secondary-bg);
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .tracks__button {
     width: 50px;
     height: 50px;
@@ -1005,7 +1021,7 @@ template {
 .tracks__button + .tracks__button {
   margin-left: 10px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .tracks__button + .tracks__button {
     margin-left: 20px;
   }
@@ -1017,7 +1033,7 @@ template {
   display: inline-block;
   padding: 3px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .tracks__button::after {
     border-width: 0 2px 2px 0;
     padding: 4px;

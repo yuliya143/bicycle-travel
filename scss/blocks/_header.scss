@@ -1,6 +1,5 @@
 .header {
   box-sizing: border-box;
-  max-width: 1440px;
   margin-right: auto;
   margin-left: auto;
   padding-top: 10px;
@@ -21,7 +20,7 @@
 
   @include tablet {
     display: flex;
-    padding: 28px 120px;
+    padding: 28px 0;
   }
 
   &__container {
@@ -29,5 +28,11 @@
     display: flex;
     justify-content: flex-end;
     width: 100%;
+    padding: 0;
+
+    @include tablet {
+      padding-left: var(--content-indent);
+      padding-right: var(--content-indent);
+    }
   }
 }
