@@ -12,14 +12,7 @@ function addListenerToBackButton() {
 function handleBackButtonClicked(e) {
   trackActiveIndex = --trackActiveIndex <= 0 ? 0 : trackActiveIndex;
 
-  tracksSlides.forEach((slide, index) => {
-    trackActiveIndex === index
-      ? slide.classList.add('tracks__item_active')
-      : slide.classList.remove('tracks__item_active');
-
-    const slideWidth = tracksSlides[index].clientWidth;
-    slide.style.transform = `translateX(-${slideWidth * trackActiveIndex}px)`;
-  });
+  moveSlides();
 }
 
 function addListenerToForwardButton() {
@@ -28,8 +21,11 @@ function addListenerToForwardButton() {
 
 function handleForwardButtonClicked(e) {
   trackActiveIndex = ++trackActiveIndex >= lastTracksIndex ? lastTracksIndex : trackActiveIndex;
-  console.log(trackActiveIndex);
 
+  moveSlides();
+}
+
+function moveSlides() {
   tracksSlides.forEach((slide, index) => {
     trackActiveIndex === index
       ? slide.classList.add('tracks__item_active')
@@ -40,4 +36,9 @@ function handleForwardButtonClicked(e) {
   });
 }
 
-export { addListenerToBackButton, addListenerToForwardButton };
+function addTracksListeners() {
+  addListenerToBackButton();
+  addListenerToForwardButton();
+}
+
+export { addTracksListeners };

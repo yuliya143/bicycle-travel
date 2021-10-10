@@ -372,9 +372,10 @@ template {
 :root.dark-theme {
   --primary-color: #fff;
   --text-color: #e6e6e6;
+  --bicycle-title-color: #151515;
   --page-background: #333;
   --card-bg: #f4f4f4;
-  --divider: #e3e3e3;
+  --divider: #7d7d7d;
   --footer-background: #2f2f2f;
   --btn-primary-bg: #24b47e;
   --btn-primary-bg-hover: #319e75;
@@ -394,6 +395,7 @@ template {
 :root {
   --primary-color: #151515;
   --text-color: #222222;
+  --bicycle-title-color: #151515;
   --page-background: #f4f4f4;
   --card-bg: #f4f4f4;
   --divider: #e3e3e3;
@@ -451,9 +453,6 @@ template {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--page-background);
-}
-.page_menu-opened {
-  overflow: hidden;
 }
 
 .container {
@@ -698,7 +697,7 @@ template {
   max-width: 340px;
   min-width: 234px;
   position: sticky;
-  top: 20px;
+  top: 100px;
   padding: 10px 26px;
   line-height: 0;
   border-radius: 20px;
@@ -745,9 +744,12 @@ template {
 .promo__button {
   all: unset;
   line-height: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   background-color: var(--btn-primary-bg);
   border-radius: 4px;
-  max-width: 284px;
+  max-width: 400px;
   width: 100%;
   font-weight: 600;
   font-size: 13px;
@@ -758,22 +760,34 @@ template {
   padding: 14px;
   box-sizing: border-box;
   cursor: pointer;
-  transition: color 0.2s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 @media (min-width: 1024px) {
   .promo__button {
+    margin: 0;
     max-width: 180px;
     grid-column: 1/2;
     grid-row: 3/4;
-    align-self: start;
     font-size: 14px;
     line-height: 1.29;
   }
 }
-@media (hover: hover) and (pointer: fine) {
-  .promo__button:hover {
-    background-color: var(--btn-primary-bg-hover);
-  }
+.promo__button::after {
+  content: "";
+  background: var(--btn-primary-bg-hover);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+}
+.promo__button:hover::after {
+  transform: translateX(0);
 }
 
 .quote {
@@ -1013,6 +1027,12 @@ template {
   height: 24px;
   border-radius: 50%;
   background-color: var(--btn-secondary-bg);
+  transition: opacity 0.2s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tracks__button:hover {
+    opacity: 0.6;
+  }
 }
 @media (min-width: 768px) {
   .tracks__button {
@@ -1150,6 +1170,7 @@ template {
   position: absolute;
   left: 0;
   right: 0;
+  z-index: 10;
 }
 .bicycles__menu-list_opened {
   display: block;
@@ -1222,12 +1243,15 @@ template {
   margin: 0;
   padding: 40px 0;
   list-style-type: none;
-  display: flex;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
 }
 @media (min-width: 1024px) {
   .bicycles__list {
     overflow: visible;
+    display: flex;
   }
 }
 .bicycles__item {
@@ -1237,17 +1261,29 @@ template {
   flex-shrink: 0;
   text-align: center;
   box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease;
+  grid-column: 1/-1;
+  grid-row: 1/-1;
 }
-.bicycles__item + .bicycles__item {
-  margin-left: 30px;
+.bicycles__item_active {
+  opacity: 1;
+  visibility: visible;
 }
 @media (min-width: 1024px) {
   .bicycles__item {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
     width: 33.333%;
     max-width: 380px;
     padding-right: 0;
     padding-left: 0;
     flex-shrink: 1;
+  }
+  .bicycles__item + .bicycles__item {
+    margin-left: 30px;
   }
 }
 .bicycles__link {
@@ -1284,6 +1320,7 @@ template {
   max-height: 100%;
 }
 .bicycles__image-title {
+  color: var(--bicycle-title-color);
   margin: 0;
   padding-top: 3px;
   padding-bottom: 16px;
@@ -1298,6 +1335,9 @@ template {
     text-align: left;
     font-size: 18px;
     line-height: 1.22;
+  }
+  .dark-theme .bicycles__image-title {
+    color: var(--primary-color);
   }
 }
 .bicycles__dots {
@@ -1469,6 +1509,7 @@ template {
   background-color: inherit;
   border: 1px solid var(--input-border);
   border-radius: 4px;
+  color: var(--primary-color);
   font-weight: 500;
   box-sizing: border-box;
   font-size: 13px;
@@ -1520,6 +1561,7 @@ template {
   transition: opacity 0.3s ease;
 }
 .form__item:focus {
+  color: var(--primary-color);
   outline: none;
   border: 1px solid var(--input-border-focus);
   opacity: 1;
@@ -1527,7 +1569,7 @@ template {
 }
 .form__item:focus ~ .form__button {
   opacity: 1;
-  visibility: visible;
+  width: auto;
 }
 .form__button {
   all: unset;
@@ -1538,7 +1580,8 @@ template {
   right: 0;
   bottom: 0;
   opacity: 0;
-  visibility: hidden;
+  width: 0;
+  overflow: hidden;
   cursor: pointer;
 }
 
@@ -1570,8 +1613,8 @@ template {
 }
 .theme-toggle__button {
   -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   position: relative;
   display: inline-block;
   box-sizing: border-box;

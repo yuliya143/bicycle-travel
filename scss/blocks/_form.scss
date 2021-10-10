@@ -17,6 +17,7 @@
     background-color: inherit;
     border: 1px solid var(--input-border);
     border-radius: 4px;
+    color: var(--primary-color);
     font-weight: 500;
     box-sizing: border-box;
     font-size: 13px;
@@ -41,6 +42,7 @@
     }
 
     &:focus {
+      color: var(--primary-color);
       outline: none;
       border: 1px solid var(--input-border-focus);
       opacity: 1;
@@ -49,7 +51,7 @@
 
     &:focus ~ .form__button {
       opacity: 1;
-      visibility: visible;
+      width: auto;
     }
   }
 
@@ -62,7 +64,8 @@
     right: 0;
     bottom: 0;
     opacity: 0;
-    visibility: hidden;
+    width: 0;
+    overflow: hidden;
     cursor: pointer;
   }
 }

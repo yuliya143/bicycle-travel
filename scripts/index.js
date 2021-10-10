@@ -1,20 +1,11 @@
 import { addThemeListener } from './theme.js';
-import { addNavMenuListener, addNavListener, addScrollListener } from './header.js';
+import { addHeaderListeners } from './header.js';
 import { addFormListener } from './form.js';
-import { addListenerToBackButton, addListenerToForwardButton } from './tracks.js';
-import {
-  addBicyclesMenuListener,
-  addBicyclesMunuButtonListener,
-  addTouchListeners,
-} from './bicycles.js';
+import { addTracksListeners } from './tracks.js';
+import { addBicyclesListeners } from './bicycles.js';
 
 addThemeListener();
-addNavMenuListener();
-addNavListener();
-addBicyclesMenuListener();
-addBicyclesMunuButtonListener();
-addScrollListener();
+addHeaderListeners();
+addBicyclesListeners();
 addFormListener();
-addListenerToBackButton();
-addListenerToForwardButton();
-addTouchListeners();
+addTracksListeners();

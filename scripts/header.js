@@ -10,8 +10,7 @@ function addNavMenuListener() {
   menuButton.addEventListener('click', handleNavMenuToggle);
 }
 
-function handleNavMenuToggle(e) {
-  document.body.classList.toggle('page_menu-opened');
+function handleNavMenuToggle() {
   siteNav.classList.toggle('navigation_opened');
   menuButton.classList.toggle('menu-button_opened');
   themeBox.classList.toggle('theme-toggle_header');
@@ -37,11 +36,36 @@ function handleNavLinkClicked(e) {
   const isLinkClicked = e.target.classList.contains('navigation__link');
 
   if (isLinkClicked) {
-    const sectionId = e.target.getAttribute('href');
-    const sectionOffsetTop = document.querySelector(sectionId).offsetTop;
-
-    window.scrollTo({ top: sectionOffsetTop - HEADER_HEIGHT, behavior: 'smooth' });
+    scrollToSection(e.target);
+    handleNavMenuToggle();
   }
 }
 
-export { addNavListener, addNavMenuListener, addScrollListener };
+function scrollToSection(link) {
+  const sectionId = link.getAttribute('href');
+  const sectionOffsetTop = document.querySelector(sectionId).offsetTop;
+
+  window.scrollTo({ top: sectionOffsetTop - HEADER_HEIGHT, behavior: 'smooth' });
+}
+
+function addResizeListener() {
+  const desktop = window.matchMedia('(min-width: 768px)');
+
+  desktop.addEventListener('change', closeNavIfOpen);
+}
+
+function closeNavIfOpen() {
+  if (siteNav.classList.contains('navigation_opened')) {
+    handleNavMenuToggle();
+    console.log('1234');
+  }
+}
+
+function addHeaderListeners() {
+  addNavMenuListener();
+  addScrollListener();
+  addResizeListener();
+  addNavListener();
+}
+
+export { addHeaderListeners };

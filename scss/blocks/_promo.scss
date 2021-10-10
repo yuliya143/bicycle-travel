@@ -78,7 +78,7 @@
     max-width: 340px;
     min-width: 234px;
     position: sticky;
-    top: 20px;
+    top: 100px;
     padding: 10px 26px;
     line-height: 0;
     border-radius: 20px;
@@ -126,9 +126,12 @@
   &__button {
     all: unset;
     line-height: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     background-color: var(--btn-primary-bg);
     border-radius: 4px;
-    max-width: 284px;
+    max-width: 400px;
     width: 100%;
     font-weight: 600;
     font-size: 13px;
@@ -139,20 +142,35 @@
     padding: 14px;
     box-sizing: border-box;
     cursor: pointer;
-    transition: color 0.2s ease;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
 
     @include tablet-landscape {
+      margin: 0;
       max-width: 180px;
       grid-column: 1/2;
       grid-row: 3/4;
-      align-self: start;
       font-size: 14px;
       line-height: 1.29;
     }
 
-    @include only-desktop {
-      &:hover {
-        background-color: var(--btn-primary-bg-hover);
+    &::after {
+      content: '';
+      background: var(--btn-primary-bg-hover);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: -1;
+      transform: translateX(-100%);
+      transition: transform 0.4s ease;
+    }
+
+    &:hover {
+      &::after {
+        transform: translateX(0);
       }
     }
   }

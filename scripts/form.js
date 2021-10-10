@@ -7,6 +7,7 @@ function addFormListener() {
 
 function handleSubmit(e) {
   e.preventDefault();
+  console.log('event bleat');
 
   const email = input.value.trim();
 

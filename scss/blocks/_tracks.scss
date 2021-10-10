@@ -146,6 +146,13 @@
     height: 24px;
     border-radius: 50%;
     background-color: var(--btn-secondary-bg);
+    transition: opacity 0.2s ease;
+
+    @include only-desktop {
+      &:hover {
+        opacity: 0.6;
+      }
+    }
 
     @include tablet {
       width: 50px;
