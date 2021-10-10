@@ -10,22 +10,22 @@
 }
 
 @font-face {
-  src: url(../../assets/fonts/Inter-Bold.woff) format("woff"), url(../../assets/fonts/Inter-Bold.woff2) format("woff2");
+  src: url(./../assets/fonts/Inter-Bold.woff) format("woff"), url(./../assets/fonts/Inter-Bold.woff2) format("woff2");
   font-family: "Inter";
   font-weight: 700;
 }
 @font-face {
-  src: url(../../assets/fonts/Inter-SemiBold.woff) format("woff"), url(../../assets/fonts/Inter-SemiBold.woff2) format("woff2");
+  src: url(./../assets/fonts/Inter-SemiBold.woff) format("woff"), url(./../assets/fonts/Inter-SemiBold.woff2) format("woff2");
   font-family: "Inter";
   font-weight: 600;
 }
 @font-face {
-  src: url(../../assets/fonts/Inter-Medium.woff) format("woff"), url(../../assets/fonts/Inter-Medium.woff2) format("woff2");
+  src: url(./../assets/fonts/Inter-Medium.woff) format("woff"), url(./../assets/fonts/Inter-Medium.woff2) format("woff2");
   font-family: "Inter";
   font-weight: 500;
 }
 @font-face {
-  src: url(../../assets/fonts/Inter-Regular.woff) format("woff"), url(../../assets/fonts/Inter-Regular.woff2) format("woff2");
+  src: url(./../assets/fonts/Inter-Regular.woff) format("woff"), url(./../assets/fonts/Inter-Regular.woff2) format("woff2");
   font-family: "Inter";
   font-weight: 400;
 }
@@ -982,13 +982,13 @@ template {
   box-sizing: border-box;
 }
 .tracks__badge_type_highway {
-  background-image: url(../../assets/images/highway-badge.svg);
+  background-image: url(./../assets/images/highway-badge.svg);
 }
 .tracks__badge_type_gravel {
-  background-image: url(../../assets/images/gravel-badge.svg);
+  background-image: url(./../assets/images/gravel-badge.svg);
 }
 .tracks__badge_type_tt {
-  background-image: url(../../assets/images/tt-badge.svg);
+  background-image: url(./../assets/images/tt-badge.svg);
 }
 .tracks__text {
   opacity: 0;
