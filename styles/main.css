@@ -1151,6 +1151,9 @@ template {
   left: 0;
   right: 0;
 }
+.bicycles__menu-list_opened {
+  display: block;
+}
 @media (min-width: 1024px) {
   .bicycles__menu-list {
     display: flex;
@@ -1167,6 +1170,9 @@ template {
   .bicycles__menu-item {
     border: 0;
     margin-right: 40px;
+  }
+  .bicycles__menu-item:last-child {
+    margin-right: 0;
   }
 }
 .bicycles__menu-link {
@@ -1201,8 +1207,10 @@ template {
     opacity: 0.75;
   }
 }
-.bicycles__box {
+.bicycles__content {
   margin-top: -20px;
+}
+.bicycles__box {
   display: none;
 }
 .bicycles__box_active {
@@ -1210,12 +1218,10 @@ template {
 }
 .bicycles__list {
   margin: 0;
-  padding: 0;
+  padding: 40px 0;
   list-style-type: none;
   display: flex;
   overflow: hidden;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 @media (min-width: 1024px) {
   .bicycles__list {

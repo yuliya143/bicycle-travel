@@ -92,6 +92,10 @@
     left: 0;
     right: 0;
 
+    &_opened {
+      display: block;
+    }
+
     @include tablet-landscape {
       display: flex;
       position: static;
@@ -107,6 +111,10 @@
     @include tablet-landscape {
       border: 0;
       margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
@@ -145,8 +153,11 @@
     }
   }
 
-  &__box {
+  &__content {
     margin-top: -20px;
+  }
+
+  &__box {
     display: none;
 
     &_active {
@@ -156,12 +167,10 @@
 
   &__list {
     margin: 0;
-    padding: 0;
+    padding: 40px 0;
     list-style-type: none;
     display: flex;
     overflow: hidden;
-    padding-top: 40px;
-    padding-bottom: 40px;
 
     @include tablet-landscape {
       overflow: visible;
