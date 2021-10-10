@@ -1217,33 +1217,47 @@ template {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+@media (min-width: 1024px) {
+  .bicycles__list {
+    overflow: visible;
+  }
+}
 .bicycles__item {
-  background: var(--card-bg);
-  border-radius: 20px;
-  box-shadow: 0 0 40px -15px rgba(0, 0, 0, 0.1);
-  margin-right: var(--content-indent);
-  margin-left: var(--content-indent);
-  min-width: 284px;
-  max-width: 380px;
+  padding-right: var(--content-indent);
+  padding-left: var(--content-indent);
+  width: 100%;
+  flex-shrink: 0;
   text-align: center;
+  box-sizing: border-box;
 }
 .bicycles__item + .bicycles__item {
-  margin-left: 50px;
+  margin-left: 30px;
 }
 @media (min-width: 1024px) {
   .bicycles__item {
-    box-shadow: none;
-    border-radius: 0;
-    background-color: transparent;
-    margin-right: 0;
-    margin-left: 0;
+    width: 33.333%;
+    max-width: 380px;
+    padding-right: 0;
+    padding-left: 0;
+    flex-shrink: 1;
   }
 }
 .bicycles__link {
+  background: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 0 40px -15px rgba(0, 0, 0, 0.1);
+  display: block;
   color: var(--primary-color);
   text-decoration: none;
   transition: opacity 0.2s ease;
   cursor: pointer;
+}
+@media (min-width: 1024px) {
+  .bicycles__link {
+    box-shadow: none;
+    border-radius: 0;
+    background-color: transparent;
+  }
 }
 .bicycles__image-container {
   padding: 15px 15px 0;
