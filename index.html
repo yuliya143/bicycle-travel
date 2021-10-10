@@ -15,9 +15,9 @@
     <header class="header">
       <div class="header__container container">
         <nav class="header__menu navigation">
-          <a href="#" class="navigation__link">Покрытия и градиенты</a>
-          <a href="#" class="navigation__link">Велосипеды</a>
-          <a href="#" class="navigation__link">Тренировки</a>
+          <a href="#tracks" class="navigation__link">Покрытия и градиенты</a>
+          <a href="#bicycles" class="navigation__link">Велосипеды</a>
+          <a href="#trainings" class="navigation__link">Тренировки</a>
         </nav>
         <button type="button" class="menu-button">
           <span class="menu-button__line"></span>
@@ -77,7 +77,7 @@
         </div>
       </aside>
 
-      <section class="tracks">
+      <section id="tracks" class="tracks">
         <div class="tracks__container container">
           <div class="tracks__box">
             <ul class="tracks__list">
@@ -139,7 +139,7 @@
         </div>
       </section>
 
-      <section class="bicycles">
+      <section id="bicycles" class="bicycles">
         <div class="bicycles__container container">
           <div class="bicycles__hgroup">
             <h2 class="bicycles__title section-title">Велосипеды</h2>
@@ -148,19 +148,21 @@
 
               <ul class="bicycles__menu-list">
                 <li class="bicycles__menu-item">
-                  <a href="#" class="bicycles__menu-link bicycles__menu-link_active">Шоссе</a>
+                  <a href="#highway" class="bicycles__menu-link bicycles__menu-link_active">
+                    Шоссе
+                  </a>
                 </li>
                 <li class="bicycles__menu-item">
-                  <a href="#" class="bicycles__menu-link">Грэвел</a>
+                  <a href="#gravel" class="bicycles__menu-link">Грэвел</a>
                 </li>
                 <li class="bicycles__menu-item">
-                  <a href="#" class="bicycles__menu-link">TT</a>
+                  <a href="#tt" class="bicycles__menu-link">TT</a>
                 </li>
               </ul>
             </div>
           </div>
 
-          <div class="bicycles__box bicycles__box_type_highway">
+          <div id="highway" class="bicycles__box bicycles__box_active">
             <ul class="bicycles__list">
               <li class="bicycles__item">
                 <a
@@ -213,7 +215,7 @@
             </ul>
           </div>
 
-          <div class="bicycles__box bicycles__box_type_gravel">
+          <div id="gravel" class="bicycles__box">
             <ul class="bicycles__list">
               <li class="bicycles__item">
                 <a
@@ -266,7 +268,7 @@
             </ul>
           </div>
 
-          <div class="bicycles__box bicycles__box_type_tt">
+          <div id="tt" class="bicycles__box">
             <ul class="bicycles__list">
               <li class="bicycles__item">
                 <a
@@ -327,7 +329,7 @@
         </div>
       </section>
 
-      <section class="trainings">
+      <section id="trainings" class="trainings">
         <div class="trainings__container container">
           <h2 class="trainings__title section-title">Тренировки</h2>
           <img

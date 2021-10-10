@@ -147,13 +147,10 @@
 
   &__box {
     margin-top: -20px;
+    display: none;
 
-    &_type_gravel {
-      display: none;
-    }
-
-    &_type_tt {
-      display: none;
+    &_active {
+      display: block;
     }
   }
 

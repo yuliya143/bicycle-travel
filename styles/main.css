@@ -373,6 +373,7 @@ template {
   --primary-color: #fff;
   --text-color: #e6e6e6;
   --page-background: #333;
+  --card-bg: #f4f4f4;
   --divider: #e3e3e3;
   --footer-background: #2f2f2f;
   --btn-primary-bg: #24b47e;
@@ -394,6 +395,7 @@ template {
   --primary-color: #151515;
   --text-color: #222222;
   --page-background: #f4f4f4;
+  --card-bg: #f4f4f4;
   --divider: #e3e3e3;
   --footer-background: #efefef;
   --btn-primary-bg: #24b47e;
@@ -686,7 +688,7 @@ template {
   max-height: 100%;
 }
 .promo__bicycle-container {
-  background: var(--page-background);
+  background: var(--card-bg);
   border-radius: 20px;
   box-shadow: 0 0 40px -15px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -1201,12 +1203,10 @@ template {
 }
 .bicycles__box {
   margin-top: -20px;
-}
-.bicycles__box_type_gravel {
   display: none;
 }
-.bicycles__box_type_tt {
-  display: none;
+.bicycles__box_active {
+  display: block;
 }
 .bicycles__list {
   margin: 0;
@@ -1218,7 +1218,7 @@ template {
   padding-bottom: 40px;
 }
 .bicycles__item {
-  background: var(--page-background);
+  background: var(--card-bg);
   border-radius: 20px;
   box-shadow: 0 0 40px -15px rgba(0, 0, 0, 0.1);
   margin-right: var(--content-indent);
@@ -1251,7 +1251,7 @@ template {
 }
 @media (min-width: 1024px) {
   .bicycles__image-container {
-    background: var(--page-background);
+    background: var(--card-bg);
     border-radius: 20px;
     box-shadow: 0 0 40px -15px rgba(0, 0, 0, 0.1);
     padding: 20px;
