@@ -4,7 +4,9 @@ const bicyclesMenuButton = document.querySelector('.bicycles__menu-button');
 const bicyclesMenuLinks = Array.from(document.querySelectorAll('.bicycles__menu-link'));
 const bicyclesBoxes = Array.from(document.querySelectorAll('.bicycles__box'));
 const bicyclesContent = document.querySelector('.bicycles__content');
+const dots = Array.from(document.querySelectorAll('.bicycles__dot'));
 
+let activeSlideIndex = 0;
 let currentBicycles = [];
 let touchstartX = 0;
 let touchendX = 0;
@@ -32,11 +34,22 @@ function addTouchListeners() {
 
 function handleGesture() {
   const isTouchHappened = Math.abs(touchstartX - touchendX) > TUOCH_THRESHHOLD;
-  if (isTouchHappened && touchendX < touchstartX) {
-    console.log(currentBicycles);
+  const isLeftSwipe = isTouchHappened && touchendX < touchstartX;
+  const isRightSwipe = isTouchHappened && touchendX > touchstartX;
+
+  if (isLeftSwipe) {
+    activeSlideIndex = --activeSlideIndex <= 0 ? 0 : activeSlideIndex;
   }
-  if (isTouchHappened && touchendX > touchstartX) {
+
+  if (isRightSwipe) {
+    activeSlideIndex = ++activeSlideIndex < 3 ? activeSlideIndex : 2;
   }
+
+  dots.forEach((dot, index) => {
+    activeSlideIndex === index
+      ? dot.classList.add('bicycles__dot_active')
+      : dot.classList.remove('bicycles__dot_active');
+  });
 }
 
 function addBicyclesMenuListener() {
@@ -51,6 +64,7 @@ function handleBicyclesMenuClicked(e) {
   if (isLinkClicked) {
     const boxId = e.target.getAttribute('href');
     const box = document.querySelector(boxId);
+
     bicyclesMenuButton.textContent = e.target.textContent;
 
     currentBicycles = Array.from(box.querySelectorAll('.bicycles__item'));

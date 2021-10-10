@@ -11,7 +11,6 @@ function addListenerToBackButton() {
 
 function handleBackButtonClicked(e) {
   trackActiveIndex = --trackActiveIndex <= 0 ? 0 : trackActiveIndex;
-  console.log(trackActiveIndex, 'back');
 
   tracksSlides.forEach((slide, index) => {
     trackActiveIndex === index
