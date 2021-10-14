@@ -1,0 +1,38 @@
+.footer {
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  background-color: var(--footer-background);
+  padding-top: 60px;
+  padding-bottom: 25px;
+
+  @include tablet-landscape {
+    padding-top: 80px;
+    padding-bottom: 60px;
+  }
+
+  &__title {
+    margin: 0;
+    max-width: 284px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.33;
+  }
+
+  &__form {
+    max-width: 360px;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  &__copyright {
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--copyright-color);
+  }
+}

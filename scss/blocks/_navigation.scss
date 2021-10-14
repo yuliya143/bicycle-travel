@@ -1,0 +1,48 @@
+.navigation {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--page-background);
+  font-family: var(--font-family);
+  color: var(--primary-color);
+  padding: 144px 18px 0;
+
+  &_opened {
+    display: block;
+  }
+
+  @include tablet {
+    padding: 0;
+    position: static;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1;
+    color: var(--primary-color);
+    text-align: center;
+    padding-bottom: 32px;
+    transition: opacity 0.2s ease;
+
+    @include tablet {
+      padding-bottom: 0;
+      margin-left: 34px;
+      font-size: 14px;
+      line-height: 1.29;
+    }
+
+    @include only-desktop {
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+  }
+}
