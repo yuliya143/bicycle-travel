@@ -937,7 +937,7 @@ template {
     padding-right: 40px;
   }
 }
-.tracks__item_active .tracks__title, .tracks__item_active .tracks__text, .tracks__item_active .tracks__badge {
+.tracks__item_active .tracks__title, .tracks__item_active .tracks__text, .tracks__item_active .tracks__image-container::after {
   opacity: 1;
 }
 .tracks__title {
@@ -954,6 +954,32 @@ template {
   position: relative;
   order: 3;
 }
+.tracks__image-container::after {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  position: absolute;
+  left: 0;
+  bottom: 16px;
+  background-color: var(--btn-primary-bg);
+  background-repeat: no-repeat;
+  background-position: left 16px bottom 12px;
+  width: 100px;
+  height: 40px;
+  border-top-right-radius: 7px;
+  -webkit-clip-path: polygon(0% 0%, 101% 0%, 84% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 101% 0%, 84% 100%, 0% 100%);
+  box-sizing: border-box;
+}
+.tracks__image-container_type_highway::after {
+  background-image: url(./../assets/images/highway-badge.svg);
+}
+.tracks__image-container_type_gravel::after {
+  background-image: url(./../assets/images/gravel-badge.svg);
+}
+.tracks__image-container_type_tt::after {
+  background-image: url(./../assets/images/tt-badge.svg);
+}
 .tracks__image {
   display: block;
   max-width: 100%;
@@ -966,29 +992,6 @@ template {
     width: 100%;
     max-height: 400px;
   }
-}
-.tracks__badge {
-  opacity: 0;
-  transition: opacity 0.2s ease;
-  position: absolute;
-  left: 0;
-  bottom: 16px;
-  background-color: var(--btn-primary-bg);
-  background-repeat: no-repeat;
-  background-position: left 16px bottom 12px;
-  width: 100px;
-  height: 40px;
-  border-top-right-radius: 6px;
-  box-sizing: border-box;
-}
-.tracks__badge_type_highway {
-  background-image: url(./../assets/images/highway-badge.svg);
-}
-.tracks__badge_type_gravel {
-  background-image: url(./../assets/images/gravel-badge.svg);
-}
-.tracks__badge_type_tt {
-  background-image: url(./../assets/images/tt-badge.svg);
 }
 .tracks__text {
   opacity: 0;
@@ -1470,6 +1473,7 @@ template {
 }
 .footer__title {
   margin: 0;
+  max-width: 284px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
@@ -1586,10 +1590,17 @@ template {
 }
 
 .theme-toggle {
-  display: flex;
-  align-items: center;
+  display: none;
+}
+@media (min-width: 768px) {
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+  }
 }
 .theme-toggle_header {
+  display: flex;
+  align-items: center;
   position: fixed;
   left: 0;
   right: 0;

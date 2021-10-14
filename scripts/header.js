@@ -34,9 +34,13 @@ function handleNavLinkClicked(e) {
   e.preventDefault();
 
   const isLinkClicked = e.target.classList.contains('navigation__link');
+  const isDesktop = window.matchMedia('(min-width: 768px)').matches;
 
   if (isLinkClicked) {
     scrollToSection(e.target);
+  }
+
+  if (isLinkClicked && !isDesktop) {
     handleNavMenuToggle();
   }
 }
@@ -57,7 +61,6 @@ function addResizeListener() {
 function closeNavIfOpen() {
   if (siteNav.classList.contains('navigation_opened')) {
     handleNavMenuToggle();
-    console.log('1234');
   }
 }
 

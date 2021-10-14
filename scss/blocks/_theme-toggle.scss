@@ -1,8 +1,14 @@
 .theme-toggle {
-  display: flex;
-  align-items: center;
+  display: none;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
 
   &_header {
+    display: flex;
+    align-items: center;
     position: fixed;
     left: 0;
     right: 0;
